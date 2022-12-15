@@ -243,7 +243,8 @@
                   }
                 }
                 else {
-                  $.find($labelTitle).replaceWith($('<a href="' + hotspotNewData.cta + '" target="_blank">' + $labelTitle.html() + '</a>'));
+                  var elseCta = '<a href="' + hotspotNewData.cta + '" target="_blank">' + $labelTitle.html() + '</a>';
+                  $.find($labelTitle).replaceWith(elseCta);
                 }
               }
               if (data.hotspots[hid].description !== hotspotNewData.description) {
