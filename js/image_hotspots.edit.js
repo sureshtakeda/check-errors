@@ -207,7 +207,7 @@
           hotspotNewData = {
             title: divs.$editForm.find('input[name="hotspots-title"]').val(),
             description: CKEDITOR.instances['edit-hotspots-description-value'].getData(),
-            link: divs.$editForm.find('input[name="hotspots-link"]').val(),
+            cta: divs.$editForm.find('input[name="hotspots-link"]').val(),
             target: divs.$editForm.find('input[type=checkbox][name=hotspots-target]:checked').val(),
             x: Math.round(selection.x),
             y: Math.round(selection.y),
@@ -233,17 +233,17 @@
               if (data.hotspots[hid].title !== hotspotNewData.title) {
                 $labelTitle.text(hotspotNewData.title);
               }
-              if (data.hotspots[hid].link !== hotspotNewData.link) {
+              if (data.hotspots[hid].link !== hotspotNewData.cta) {
                 if ($labelTitle.is('a')) {
-                  if (hotspotNewData.link === '') {
+                  if (hotspotNewData.cta === '') {
                     $labelTitle.replaceWith($('<span>' + $labelTitle.html() + '</span>'));
                   }
                   else {
-                    $.find($labelTitle).attr('href', hotspotNewData.link);
+                    $.find($labelTitle).attr('href', hotspotNewData.cta);
                   }
                 }
                 else {
-                  $.find($labelTitle).replaceWith($('<a href="' + hotspotNewData.link + '" target="_blank">' + $labelTitle.html() + '</a>'));
+                  $.find($labelTitle).replaceWith($('<a href="' + hotspotNewData.cta + '" target="_blank">' + $labelTitle.html() + '</a>'));
                 }
               }
               if (data.hotspots[hid].description !== hotspotNewData.description) {
