@@ -231,7 +231,7 @@
               hotspotNewData = responseData;
               var $labelTitle = state.currentLabel.find('.label-title').children();
               if (data.hotspots[hid].title !== hotspotNewData.title) {
-                $labelTitle.html(hotspotNewData.title);
+                $.find($labelTitle).html(hotspotNewData.title);
               }
               if (data.hotspots[hid].link !== hotspotNewData.link) {
                 if ($labelTitle.is('a')) {
