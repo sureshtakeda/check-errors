@@ -1,0 +1,54 @@
+view:
+  css:
+    theme:
+      css/image_hotspots.view.css: {}
+  js:
+    js/image_hotspots.view.js: {}
+  dependencies:
+    - image_hotspots/tipTip
+    - core/drupal
+
+edit:
+  css:
+    theme:
+      css/image_hotspots.edit.css: {}
+  js:
+    js/image_hotspots.edit.js: {}
+  dependencies:
+    - image_hotspots/jquery.jcrop
+    - image_hotspots/view
+    - ckeditor/drupal.ckeditor
+
+translate:
+  css:
+    theme:
+      css/image_hotspots.edit.css: {}
+  js:
+    js/image_hotspots.translate.js: {}
+  dependencies:
+    - image_hotspots/view
+
+tipTip:
+  css:
+    theme:
+      /libraries/jquery-tiptip/tipTip.css: {}
+  js:
+    /libraries/jquery-tiptip/jquery.tipTip.minified.js: { minified: true }
+  dependencies:
+    - core/jquery
+
+jquery.jcrop:
+  css:
+    theme:
+      /libraries/jquery-jcrop/css/jquery.Jcrop.min.css: { minified: true }
+  js:
+    /libraries/jquery-jcrop/js/jquery.Jcrop.min.js: { minified: true }
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+
+libeditor:
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.20.0/ckeditor.js: { type: external, minified: true }
+  dependencies:
+    - core/drupal

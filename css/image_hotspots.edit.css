@@ -1,0 +1,162 @@
+/* Jcrop styling */
+.jcrop-holder {
+  line-height: 0;
+  margin-bottom: 15px;
+  display: none;
+}
+.image-hotspots-wrapper .jcrop-hline,
+.image-hotspots-wrapper .jcrop-vline {
+  background: #24aa98;
+}
+.image-hotspots-wrapper .jcrop-handle {
+  background-color: #ffffff;
+  border-color: #24aa98;
+}
+.toolbar #toolbar-bar {
+  z-index: 1000;
+}
+/* Edit form */
+.image-hotspots-wrapper .edit-form-wrapper {
+  display: none;
+  position: absolute;
+  z-index: 50;
+  border: 1px solid var(--colorGinLayerBorder);
+  border-radius: var(--ginBorderLarge);
+  background: var(--colorGinAppBackground);
+  width: 400px;
+}
+.image-hotspots-wrapper .edit-form-wrapper .close-button {
+  display: block;
+  cursor: default;
+  max-width: 400px;
+  height: 12px;
+  background: url(images/cross.png) no-repeat 100%;
+  margin: 12px;
+}
+.image-hotspots-wrapper .edit-form-wrapper .edit-form {
+  margin: 14px 22px;
+}
+.image-hotspots-wrapper .edit-form-wrapper .form-messages {
+  max-width: 400px;
+  color: #b83d4b;
+  font-size: 14px;
+  font-weight: normal;
+}
+.image-hotspots-wrapper .edit-form-wrapper input,
+.image-hotspots-wrapper .edit-form-wrapper textarea,
+.image-hotspots-wrapper .edit-form-wrapper button {
+  font-size: 14px;
+  font-weight: normal;
+  display: block;
+}
+.image-hotspots-wrapper .edit-form-wrapper input[name = "hotspots-target"],
+.image-hotspots-wrapper .edit-form-wrapper label {
+  display: inline-block;
+  font-size: 16px;
+  padding-left: 8px;
+  font-weight: 200;
+}
+.image-hotspots-wrapper .edit-form-wrapper input,
+.image-hotspots-wrapper .edit-form-wrapper textarea {
+  max-width: 400px;
+  background-color: #ffffff;
+  border: 1px solid #acb4bc;
+  margin-bottom: 10px;
+}
+.image-hotspots-wrapper .edit-form-wrapper input,
+.image-hotspots-wrapper .edit-form-wrapper input:focus-visible {
+  padding: 12px;
+}
+.image-hotspots-wrapper .edit-form-wrapper textarea,
+.image-hotspots-wrapper .edit-form-wrapper textarea:focus-visible {
+  width: 100%;
+  padding: 12px;
+}
+.image-hotspots-wrapper .edit-form-wrapper input::-webkit-input-placeholder,
+.image-hotspots-wrapper .edit-form-wrapper input::-moz-placeholder,
+.image-hotspots-wrapper .edit-form-wrapper input:-moz-placeholder,
+.image-hotspots-wrapper .edit-form-wrapper input:-ms-input-placeholder {
+  color: #acb4bc;
+}
+.image-hotspots-wrapper .edit-form-wrapper button {
+  border: 2px solid var(--colorGinPrimary) !important;
+  border-radius: var(--ginBorderDefault);
+  box-shadow: 0 1px 2px var(--colorGinPrimaryLight);
+  transition: var(--ginTransition);
+  color: var(--colorGinPrimary);
+  padding: 9px 20px;
+  margin-left: 15px;
+}
+.image-hotspots-wrapper .labels {
+  display: flex;
+  padding: 15px;
+  flex-wrap: wrap;
+}
+
+.image-hotspots-wrapper .labels .label {
+  margin: 10px;
+  background: var(--colorGinAppBackground);
+  padding: 10px;
+  text-align: center;
+}
+
+/* Action lables */
+.image-hotspots-wrapper .labels .label-editor {
+  display: flex;
+}
+
+.image-hotspots-wrapper .action {
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--colorGinPrimary);
+  border: 2px solid var(--colorGinPrimary) !important;
+  border-radius: var(--ginBorderDefault);
+  box-shadow: 0 1px 2px var(--colorGinPrimaryLight);
+  transition: var(--ginTransition);
+  margin-bottom: 5px;
+  padding: 4px 15px;
+  cursor: pointer;
+}
+
+.image-hotspots-wrapper .action.remove {
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--colorGinDanger);
+  box-shadow: 0 1px 2px var(--colorGinDangerLightest);
+  border-color: var(--colorGinDanger) !important;
+  margin-bottom: 5px;
+  padding: 4px 15px;
+}
+.image-hotspots-wrapper .action.edit {
+  margin-right: 10px;
+}
+.image-hotspots-wrapper .action.selected {
+  color: #ffffff;
+  background-color: #65abd0;
+}
+.image-hotspots-wrapper .add-button {
+  font-size: 14px;
+  border: 2px solid var(--colorGinPrimary) !important;
+  border-radius: var(--ginBorderDefault);
+  box-shadow: 0 1px 2px var(--colorGinPrimaryLight);
+  transition: var(--ginTransition);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 15px 25px 30px 25px;;
+  display: inline-block;
+  cursor: pointer;
+}
+.ajax-progress-throbber {
+  margin-left: 10px;
+  display: inline-block;
+}
+.ajax-progress-throbber .throbber {
+  font-size: 14px;
+  padding: 1px 8px 2px;
+}
+.custom-hotspots-form {
+  padding: 15px;
+}
+#edit-hotspots-description-format {
+  display: none;
+}

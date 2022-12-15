@@ -1,0 +1,30 @@
+{#
+/**image_hotspots
+ * @file
+ * Theme implementation for a hotspots UI.
+ */
+#}
+
+<div class="image-hotspots-wrapper" data-field-name="{{ info.field_name }}" data-image-style="{{ info.image_style }}"
+     data-fid="{{ info.fid }}" data-hotspots-style="{{ info.hotspots_style }}" data-langcode="{{ info.langcode }}">
+  <div class="image-wrapper">
+    {{ image }}
+  </div>
+  <div class="labels"></div>
+  {% if info.editable %}
+    {% if info.translatable == false %}
+      <div class="new--hotspot add-button action" title="{% trans %}Add new hotspot to image{% endtrans %}">Add
+        hotspot
+      </div>
+    {% endif %}
+    <div class="edit-form-wrapper">
+      <div class="form-header">
+        <div class="close-button"></div>
+      </div>
+      {% if active_theme() == 'tkd_base' %}
+        {{ drupal_form('Drupal\\image_hotspots\\Form\\CustomHotSpotsForm') }}
+      {% endif %}
+      <button type="submit" name="save">{% trans %}Save{% endtrans %}</button>
+    </div>
+  {% endif %}
+</div>
