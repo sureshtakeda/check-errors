@@ -204,10 +204,11 @@
             return false;
           }
           hid = state.currentHid;
+          var ctaAttr = 'input[name="hotspots-link"]';
           hotspotNewData = {
             title: divs.$editForm.find('input[name="hotspots-title"]').val(),
             description: CKEDITOR.instances['edit-hotspots-description-value'].getData(),
-            cta: divs.$editForm.find('input[name="hotspots-link"]').val(),
+            link: divs.$editForm.find(ctaAttr).val(),
             target: divs.$editForm.find('input[type=checkbox][name=hotspots-target]:checked').val(),
             x: Math.round(selection.x),
             y: Math.round(selection.y),
@@ -231,20 +232,19 @@
               hotspotNewData = responseData;
               var $labelTitle = state.currentLabel.find('.label-title').children();
               if (data.hotspots[hid].title !== hotspotNewData.title) {
-                $labelTitle.text(hotspotNewData.title);
+                $labelTitle.html(hotspotNewData.title);
               }
-              if (data.hotspots[hid].link !== hotspotNewData.cta) {
+              if (data.hotspots[hid].link !== hotspotNewData.link) {
                 if ($labelTitle.is('a')) {
-                  if (hotspotNewData.cta === '') {
+                  if (hotspotNewData.link === '') {
                     $labelTitle.replaceWith($('<span>' + $labelTitle.html() + '</span>'));
                   }
                   else {
-                    $.find($labelTitle).attr('href', hotspotNewData.cta);
+                    $labelTitle.attr('href', hotspotNewData.link);
                   }
                 }
                 else {
-                  var elseCta = '<a href="' + hotspotNewData.cta + '" target="_blank">' + $labelTitle.html() + '</a>';
-                  $.find($labelTitle).replaceWith(elseCta);
+                  $labelTitle.replaceWith($('<a href="' + hotspotNewData.link + '" target="_blank">' + $labelTitle.html() + '</a>'));
                 }
               }
               if (data.hotspots[hid].description !== hotspotNewData.description) {
