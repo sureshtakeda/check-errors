@@ -100,7 +100,7 @@
           keepAlive: false,
         });
         if (data.link !== '') {
-          $box.wrap($('<a />', {'href': data.link, 'target': '_blank'}));
+          $box.wrap($('<a />', {'href': data.link, 'target': '_blank', 'rel': 'noopener noreferrer'}));
           $box.parent().appendTo($imageWrapper);
         } else {
           $box.appendTo($imageWrapper);
