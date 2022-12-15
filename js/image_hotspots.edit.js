@@ -236,7 +236,7 @@
               if (data.hotspots[hid].link !== hotspotNewData.link) {
                 if ($labelTitle.is('a')) {
                   if (hotspotNewData.link === '') {
-                    $labelTitle.replaceWith($('<span>' + $labelTitle.html() + '</span>'));
+                    $labelTitle.replaceWith($('<span>' + $labelTitle.text() + '</span>'));
                   }
                   else {
                     $.find($labelTitle).attr('href', hotspotNewData.link);
