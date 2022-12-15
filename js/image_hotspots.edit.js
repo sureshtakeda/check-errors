@@ -204,12 +204,11 @@
             return false;
           }
           hid = state.currentHid;
-          var ctaAttr = 'input';
           hotspotNewData = {
-            title: divs.$editForm.find('input').val(),
+            title: divs.$editForm.find('input[name="hotspots-title"]').val(),
             description: CKEDITOR.instances['edit-hotspots-description-value'].getData(),
-            link: divs.$editForm.find(ctaAttr).val(),
-            target: divs.$editForm.find('input').val(),
+            link: divs.$editForm.find('input[name="hotspots-link"]').val(),
+            target: divs.$editForm.find('input[type=checkbox][name=hotspots-target]:checked').val(),
             x: Math.round(selection.x),
             y: Math.round(selection.y),
             x2: Math.round(selection.x2),

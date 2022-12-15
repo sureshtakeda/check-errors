@@ -1,7 +1,0 @@
-name: Image Hotspots
-description: Module allows you to mark the different areas of the image by text labels.
-type: module
-package: Takeda
-core_version_requirement: ^9 || ^10
-dependencies:
-  - drupal:image
