@@ -4,7 +4,7 @@
  */
 
  'use strict';
- (function ($, Drupal) {
+ (function ($, Drupal, escapeHtml)  {
    Drupal.behaviors.imageHotspotsEdit = {
      attach: function (context, settings) {
        $('.image-hotspots-wrapper:not(.init-edit)', context).once('imageHotspotsEdit').each(function () {
@@ -376,5 +376,5 @@
        });
      }
    };
- })(jQuery, Drupal);
+ })(jQuery, Drupal, escapeHtml);
  
