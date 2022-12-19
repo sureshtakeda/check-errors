@@ -207,7 +207,7 @@
           hotspotNewData = {
             title: divs.$editForm.find('input[name="hotspots-title"]').val(),
             description: CKEDITOR.instances['edit-hotspots-description-value'].getData(),
-            link: divs.$editForm.find('input[name="hotspots-link"]').val(),
+            link: divs.$editForm.find('input[name=`hotspots-link`]').val(),
             target: divs.$editForm.find('input[type=checkbox][name=hotspots-target]:checked').val(),
             x: Math.round(selection.x),
             y: Math.round(selection.y),
