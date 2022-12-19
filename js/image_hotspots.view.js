@@ -121,8 +121,8 @@
         else {
           link = [];
         }
-        var $imageHotspotsDialog = $('<div class="title">' + title + '</div><div class="image-hotspots__dialog__inner">' + Drupal.theme('imageHotspotsDialogInner', tipTipText) + '</div> <a class="link--hotspot" href=' + data.link + ' target=' + data.target + '>' + Drupal.t('Learn More') + '</a>');
-        var $imageHotspotsDialogNolink = $('<div class="title">' + title + '</div><div class="image-hotspots__dialog__inner">' + Drupal.theme('imageHotspotsDialogInner', tipTipText) + '</div>');
+        var $imageHotspotsDialog = $('&lt;div class=`title`&gt;' + title + '&lt;/div&gt; &lt;div class=`image-hotspots__dialog__inner`&gt;' + Drupal.theme('imageHotspotsDialogInner', tipTipText) + '&lt;/div&gt; &lt;a class=`link--hotspot` href=' + data.link + ' target=' + data.target + '&gt;' + Drupal.t('Learn More') + '&lt;/a&gt;');
+        var $imageHotspotsDialogNolink = $('&lt;div class=`title`&gt;' + title + '&lt;/div&gt;&lt;div class=`image-hotspots__dialog__inner`&gt;' + Drupal.theme('imageHotspotsDialogInner', tipTipText) + '&lt;/div&gt;');
           $box.appendTo($imageWrapper);
           $box.click(function() {
             if (data.link.length > 1) {
