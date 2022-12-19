@@ -205,9 +205,9 @@
           }
           hid = state.currentHid;
           hotspotNewData = {
-            title: divs.$editForm.find('input[name=`hotspots-title`]').val(),
+            title: divs.$editForm.find('input[name="hotspots-title"]').val(),
             description: CKEDITOR.instances['edit-hotspots-description-value'].getData(),
-            link: divs.$editForm.find('input[name=`hotspots-link`]').val(),
+            link: divs.$editForm.find('input[name="hotspots-link"]').val(),
             target: divs.$editForm.find('input[type=checkbox][name=hotspots-target]:checked').val(),
             x: Math.round(selection.x),
             y: Math.round(selection.y),
@@ -243,7 +243,7 @@
                   }
                 }
                 else {
-                  $labelTitle.replaceWith($('&lt;a href=`' + hotspotNewData.link + '` target=_blank`&gt;' + $labelTitle.html() + '&lt;/a&gt'));
+                  $labelTitle.replaceWith($('&lt;a href=`' + hotspotNewData.link + '` target=`_blank`&gt;' + $labelTitle.html() + '&lt;/a&gt;'));
                 }
               }
               if (data.hotspots[hid].description !== hotspotNewData.description) {
