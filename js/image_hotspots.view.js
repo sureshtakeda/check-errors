@@ -36,7 +36,6 @@
       });
     },
 
-    
     createHotspotLabel: function ($labelsWrapper, data) {
       if (data.link != '' && data.link != null) {
         var html = '<a href="' + data.link + '" target="' + data.target + '">' + data.title + '</a>';
@@ -100,35 +99,29 @@
           keepAlive: false,
         });
         if (data.link !== '') {
-          $box.wrap($('<a />', {'href': data.link, 'target': '_blank', 'rel': 'noopener noreferrer'}));
+          $box.wrap($('&lt;a /a&gt;', {'href': data.link, 'target': '_blank', 'rel': 'noopener noreferrer'}));
           $box.parent().appendTo($imageWrapper);
         } else {
           $box.appendTo($imageWrapper);
         }
       } else {
+        var stipTipText = Drupal.theme('imageHotspotsDialogInner', tipTipText);
+        var learnmore = Drupal.t('Learn More');
+
         // Prepare our modal dialog content.
         var title = (data.title !== '') ? Drupal.checkPlain(data.title) : Drupal.checkPlain(data.description);
-        var link;
-        // If a link has been provided, we can show it in the modal.
-        if (data.link !== '' && data.link !== null) {
-          link = [{
-            text: Drupal.theme('imageHotspotsLinkText'),
-            click: function click() {
-            window.location = data.link;
-          }
-          }];
-        }
-        else {
-          link = [];
-        }
-        var $imageHotspotsDialog = $('<div class=title>' + title + '</div><div class=image-hotspots__dialog__inner>' + Drupal.theme('imageHotspotsDialogInner', tipTipText) + '</div> <a class=link--hotspot href=' + data.link + ' target=' + data.target + '>' + Drupal.t('Learn More') + '</a>');
-        var $imageHotspotsDialogNolink = $('<div class=title>' + title + '</div><div class=image-hotspots__dialog__inner>' + Drupal.theme('imageHotspotsDialogInner', tipTipText) + '</div>');
+        var vtitle = '<div class=title>' + title + '</div>';
+        var vtiptipText = '<div class=image-hotspots__dialog__inner>' + stipTipText + '</div>';
+        var llink = $('<a/>', {'class': 'link--hotspot', 'target': data.target, 'data-url': data.link});
+        llink.text(learnmore);
+        var $imageHotspotsDialog = $(vtitle + vtiptipText);
           $box.appendTo($imageWrapper);
           $box.click(function() {
             if (data.link.length > 1) {
               $('.content--hub .inner--Chub').html($imageHotspotsDialog);
+              $('.content--hub .inner--Chub').append(llink);
             } else {
-              $('.content--hub .inner--Chub').html($imageHotspotsDialogNolink);
+              $('.content--hub .inner--Chub').html($imageHotspotsDialog);
             }
         });
       }
@@ -180,4 +173,15 @@
     var $el = $(this);
     $el.addClass("active").siblings().removeClass('active');
   });
+
+  $(document).on('click', '.link--hotspot', function(e) {
+    var $el = $(this);
+    if ($el.attr('target') == 1) {
+      window.open($el.attr('data-url'),'_blank');
+    }
+    else {
+      window.open($el.attr('data-url'));
+    }
+  });
+
 })(jQuery, Drupal);

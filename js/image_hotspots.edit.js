@@ -204,18 +204,16 @@
             return false;
           }
           hid = state.currentHid;
-          
           hotspotNewData = {
-            title: divs.$editForm.find('input[name="hotspots-title"]').val(),
+            title: divs.$editForm.find('input[name=hotspots-title]').val(),
             description: CKEDITOR.instances['edit-hotspots-description-value'].getData(),
-            link: divs.$editForm.find('input[name="hotspots-link"]').val(),
+            link: divs.$editForm.find('input[name=hotspots-link]').val(),
             target: divs.$editForm.find('input[type=checkbox][name=hotspots-target]:checked').val(),
             x: Math.round(selection.x),
             y: Math.round(selection.y),
             x2: Math.round(selection.x2),
             y2: Math.round(selection.y2)
           };
-          var cta = hotspotNewData.link;
           if (hotspotNewData.target === undefined) {
             hotspotNewData.target = '_self';
           }
@@ -241,11 +239,11 @@
                     $labelTitle.replaceWith($('<span>' + $labelTitle.html() + '</span>'));
                   }
                   else {
-                    $labelTitle.attr('href', cta);
+                    $labelTitle.attr('&#39;href&#39;', hotspotNewData.link);
                   }
                 }
                 else {
-                  $labelTitle.replaceWith($('<a href="' + cta + '" target="_blank">' + $labelTitle.html() + '</a>'));
+                  $labelTitle.replaceWith($('<a class="link--hotspot" target=_blank>' + $labelTitle.html() + '</a>;'));
                 }
               }
               if (data.hotspots[hid].description !== hotspotNewData.description) {
